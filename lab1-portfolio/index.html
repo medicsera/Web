@@ -7,7 +7,7 @@
     <link href="./css/styles.css" rel="stylesheet">
 </head>
 <body>
-    
+    <div id="stars-container"></div>
     <header>
         <nav class="nav">
             <div class="nav-name">
@@ -21,9 +21,31 @@
             </div>
         </nav>
     </header>
-
+    <div id="stars-container"></div>
     <main>
-        <div id="about"></div>
+        <section id="about" class="about">
+            <h1 class="title">About me</h1>
+            <div class="about-inf">
+                <div class="about-text">
+                    <h2>
+                        Hi, my name is Anton. I am a novice Russian developer.
+                        I'm trying to develop in the IT field and strive to be a FullStack developer.
+                    </h2>
+                    <h2>
+                        My achievements, which will be presented in more detail below, are small works
+                        that were created during my studies.
+                    </h2>
+                </div>
+                <div class="about-photo">
+                    <div class="photo-placeholder">
+                        <img class="photo-img" src="images/photo.jpg">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="skills" class="skills">
+            <h1 class="tirtle"></h1>
+        </section>
     </main>
 
     <footer>
@@ -31,17 +53,17 @@
     </footer>
 
     <script>
-        const starsWrapper = document.querySelector("main");
+        const starsWrapper = document.querySelector("#stars-container");
         const stars = new Array(200).fill(0).map(() => {
-        const star = document.createElement("div");
-        star.className = "stars"
-        starsWrapper.append(star);
+            const star = document.createElement("div");
+            star.className = "stars";
+            starsWrapper.append(star);
 
-        return {
-            star,
-            x: Math.random() * window.innerWidth,
-            y: Math.random() * window.innerHeight,
-            r: Math.random() * 2
+            return {
+                star,
+                x: Math.random() * window.innerWidth,
+                y: Math.random() * window.innerHeight,
+                r: Math.random() * 2
             };
         });
 
@@ -58,6 +80,7 @@
             requestAnimationFrame(update);
         }
         requestAnimationFrame(update);
+
     </script>
 </body>
 </html>
