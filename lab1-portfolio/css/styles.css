@@ -32,6 +32,7 @@ h1 {
     color: white;
     margin: 0;
     font-size: 2em;
+    
 }
 
 a {
@@ -42,9 +43,9 @@ a {
 
 main {
     width: 100%;
-    min-height: 100vh; /* Изменил на min-height */
+    min-height: 100vh;
     background-color: #0d0d0f;
-    margin-top: 100px;
+    margin-top: 65px;
 }
 
 header {
@@ -54,7 +55,7 @@ header {
     width: 100%;
     z-index: 100;
     background: #0d0d0f;
-    padding: 35px;
+    padding: 15px;
     box-shadow: 0 2px 4px rgba(255, 255, 255, 0.2);
 }
 
@@ -77,9 +78,10 @@ header {
 }
 
 .title {
+    margin-top: 50px;
     font-size: 3em;
     text-align: center;
-    padding-top: 40px;
+    padding-top: 5%;
 }
 
 .about-inf {
@@ -120,4 +122,47 @@ header {
    height: auto;
    object-fit: cover;
    border-radius: 10px;
+}
+
+.skills-inf {
+    margin-top: 2%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 30px;
+    padding: 10px;
+    margin-left: 8%;
+    margin-right: 8%;
+}
+
+.skill-card {
+    background: hsla(0, 0%, 100%, 0.5);
+    border-radius: 15px;
+    text-align: center;
+    font-size: 1.5em;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    background: rgba(255, 255, 255, 1);
+}
+
+.skill-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+    transition: all 0.5s;
+}
+
+.skill-card:hover::before {
+    left: 100%;
 }
