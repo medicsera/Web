@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Портфолио</title>
+    <link href="./css/styles.css" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        
+    </header>
+    <main>
+
+    </main>
+    <script>
+        const starsWrapper = document.querySelector("main");
+const stars = new Array(200).fill(0).map(() => {
+	const star = document.createElement("div");
+	starsWrapper.append(star);
+
+	return {
+		star,
+		x: Math.random() * window.innerWidth,
+		y: Math.random() * window.innerHeight,
+		r: Math.random() * 2
+	};
+});
+
+function update() {
+	stars.forEach((star) => {
+		star.x += star.r;
+		if (star.x > window.innerWidth) {
+			star.x = 0;
+		}
+
+		star.star.style.transform = `translate(${star.x}px, ${star.y}px) scale(${star.r})`;
+		star.star.style.opacity = `${star.r / 2}`;
+	});
+	requestAnimationFrame(update);
+}
+
+requestAnimationFrame(update);
+
+    </script>
+</body>
+
+</html>
