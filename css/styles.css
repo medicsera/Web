@@ -450,3 +450,183 @@ footer {
     position: relative;
     justify-content: center;
 }
+
+
+/* ≤ 767px */
+
+@media (max-width: 767px) {
+  html, body {
+    font-size: 14px;
+  }
+
+  .nav {
+    flex-direction: column;
+    padding: 0 15px;
+    gap: 15px;
+  }
+
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-menu.mobile-active {
+    display: flex;
+  }
+
+  .nav-links {
+    font-size: 1.4em;
+  }
+
+  .nav-name {
+    font-size: 1.6em;
+    text-align: center;
+  }
+
+  .welcome-text {
+    font-size: 2.2em;
+    padding-top: 30%;
+    line-height: 1.1;
+  }
+
+  .brand-name {
+    font-size: 1.1em;
+    margin-top: 15px;
+  }
+
+  .title {
+    font-size: 2.2em;
+    margin-top: 8%;
+  }
+
+  .about-content {
+    flex-direction: column;
+    gap: 30px;
+    height: auto;
+    margin-bottom: 40px;
+  }
+
+  .about-text {
+    margin: 0 5%;
+    font-size: 1.1em;
+  }
+
+  .about-photo {
+    flex: none;
+    margin: 0 5%;
+    order: -1; 
+  }
+
+  .photo-placeholder, .photo-img {
+    max-width: 280px;
+    margin: 0 auto;
+  }
+
+  .skills-content {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin: 0 5%;
+    height: auto;
+  }
+
+  .skill-card {
+    max-height: none;
+    font-size: 1.3em;
+    padding: 20px;
+  }
+
+  .split-card {
+    flex-direction: column;
+    height: auto;
+    margin: 15px 5%;
+  }
+
+  .card-image {
+    flex: none;
+    height: 250px;
+  }
+
+  .card-image img {
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .card-content {
+    padding: 30px 20px;
+  }
+
+  .card-content h2 {
+    font-size: 1.8em;
+  }
+
+  .card-content p {
+    font-size: 1em;
+  }
+
+  .horizontal-split-card {
+    margin: 15px 5%;
+    max-height: none;
+  }
+
+  .card-image-top {
+    height: 200px;
+    max-height: none;
+  }
+
+  .card-image-top img {
+    height: 100%;
+  }
+
+  .card-content-bottom {
+    padding: 30px 20px;
+    min-height: auto;
+  }
+
+  .card-content-bottom h2 {
+    font-size: 1.8em;
+  }
+
+  .card-content-bottom p {
+    font-size: 1em;
+  }
+
+  .card-meta {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .card-tags {
+    justify-content: center;
+  }
+
+  .contacts {
+    height: auto;
+    padding: 30px 15px;
+  }
+
+  .socials {
+    flex-direction: column;
+    gap: 25px;
+    align-items: center;
+  }
+
+  .social-grid {
+    width: 100%;
+  }
+
+  .links {
+    font-size: 1.5em;
+  }
+
+  footer {
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px 15px;
+    text-align: center;
+    font-size: 1.1em;
+  }
+}
+
