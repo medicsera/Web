@@ -35,12 +35,6 @@ h1 {
     
 }
 
-a {
-    color: white;
-    text-decoration: none;
-    font-size: 1.8em;
-}
-
 main {
     width: 100%;
     min-height: 100vh;
@@ -74,6 +68,17 @@ header {
 .nav-menu {
     display: flex;
     gap: 40px;
+}
+
+.nav-links{
+    color: white;
+    text-decoration: none;
+    font-size: 1.8em;
+}
+
+.nav-links:hover{
+    color: #00bbff;
+    text-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
 }
 
 .welcome {
@@ -129,10 +134,11 @@ header {
 }
 
 .title {
-    margin-top: 50px;
+    margin-top: 2%;
     font-size: 3em;
     text-align: center;
     padding-top: 5%;
+    margin-bottom: 5%;
 }
 
 .about-content {
@@ -177,7 +183,6 @@ header {
 }
 
 .skills-content {
-    margin-top: 2%;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     gap: 30px;
@@ -257,7 +262,6 @@ header {
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    margin: 20px 0;
 }
 
 .card-image {
@@ -392,4 +396,32 @@ header {
     justify-content: space-between;
     align-items: center;
     gap: 20px;
+}
+
+.contacts {
+    padding: 40px 20px;
+    color: white;
+}
+
+.socials {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.links{
+    color: #00bbff;
+    text-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+    text-decoration: none;
+    font-size: 1.8em;
+    position: relative;
+    justify-content: center;
+}
+
+.social-grid {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
