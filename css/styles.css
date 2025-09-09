@@ -63,6 +63,8 @@ header {
 .nav-name{
     color: #00bbff;
     text-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+    text-decoration: none;
+    font-size: 2em;
 }
 
 .nav-menu {
@@ -401,6 +403,7 @@ header {
 .contacts {
     padding: 40px 20px;
     color: white;
+    height: 90vh;
 }
 
 .socials {
@@ -424,4 +427,26 @@ header {
     justify-content: center;
     align-items: center;
     text-align: center;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    font-size: 1.3em;
+}
+
+.footer-link{
+    color: #00bbff;
+    text-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+    text-decoration: none;
+
+    position: relative;
+    justify-content: center;
 }
