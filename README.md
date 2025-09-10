@@ -1,0 +1,1 @@
+A portfolio site that provides brief information about my skills and existing projects, as well as links to social networks and the site code itself.
