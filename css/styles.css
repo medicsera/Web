@@ -630,3 +630,224 @@ footer {
   }
 }
 
+/* 768px - 1023px */
+   
+
+@media (min-width: 768px) and (max-width: 1023px) {
+
+  html, body {
+    font-size: 16px;
+  }
+
+  .nav {
+    padding: 0 20px;
+  }
+
+  .nav-menu {
+    gap: 25px;
+  }
+
+  .nav-links {
+    font-size: 1.6em;
+  }
+
+  .nav-name {
+    font-size: 1.8em
+  }
+
+  .welcome-text {
+    font-size: 2.8em;
+    padding-top: 35%;
+  }
+
+  .brand-name {
+    font-size: 1.2em;
+  }
+
+  .title {
+    font-size: 2.6em;
+  }
+
+  .about-content {
+    gap: 50px;
+    margin-bottom: 30px;
+  }
+
+  .about-text {
+    margin-left: 6%;
+    margin-right: 6%;
+    font-size: 1.1em;
+  }
+
+  .about-photo {
+    margin-right: 6%;
+  }
+
+  .skills-content {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    margin-left: 6%;
+    margin-right: 6%;
+    height: auto;
+  }
+
+  .skill-card {
+    max-height: 140px;
+    font-size: 1.4em;
+  }
+
+  .split-card {
+    margin: 20px 4%;
+    height: 70vh;
+  }
+
+  .card-image img {
+    height: 70vh;
+  }
+
+  .card-content {
+    padding: 40px 30px;
+  }
+
+  .card-content h2 {
+    font-size: 2.2em;
+  }
+
+  .card-content p {
+    font-size: 1.1em;
+  }
+
+  .horizontal-split-card {
+    margin: 20px 4%;
+  }
+
+  .card-image-top {
+    height: 40vh;
+  }
+
+  .card-content-bottom {
+    padding: 40px 30px;
+  }
+
+  .card-content-bottom h2 {
+    font-size: 2.2em;
+  }
+
+  .card-content-bottom p {
+    font-size: 1.1em;
+  }
+
+  .contacts {
+    height: 70vh;
+    padding: 35px;
+  }
+
+  .socials {
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+
+  .links {
+    font-size: 1.7em;
+  }
+
+
+  footer {
+    font-size: 1.2em;
+  }
+}
+
+/* ≥ 1440px */
+
+@media (min-width: 1440px) {
+    .nav {
+      padding: 0 50px;
+    }
+
+    .about-text {
+      margin-left: 8%;
+      margin-right: 10%;
+    }
+
+    .skills-content {
+      margin-left: 10%;
+      margin-right: 10%;
+    }
+
+    .split-card {
+      margin: 30px 6%;
+    }
+
+    .horizontal-split-card {
+      margin: 30px 6%;
+    }
+}
+
+
+
+/* Скрытие/показ элементов на разных экранах */
+.mobile-only {
+  display: none;
+}
+
+.tablet-only {
+  display: none;
+}
+
+.desktop-only {
+  display: block;
+}
+
+@media (max-width: 767px) {
+  .mobile-only {
+    display: block;
+  }
+  .tablet-only,
+  .desktop-only {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .mobile-only {
+    display: none;
+  }
+  .tablet-only {
+    display: block;
+  }
+  .desktop-only {
+    display: none;
+  }
+}
+
+.responsive-padding {
+  padding: 60px 40px;
+}
+
+@media (max-width: 767px) {
+  .responsive-padding {
+    padding: 30px 20px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .responsive-padding {
+    padding: 40px 30px;
+  }
+}
+
+.responsive-title {
+  font-size: 3em;
+}
+
+@media (max-width: 767px) {
+  .responsive-title {
+    font-size: 2.2em;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .responsive-title {
+    font-size: 2.6em;
+  }
+}
