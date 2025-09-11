@@ -186,12 +186,13 @@ header {
 
 .skills-content {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    gap: 30px;
-    padding: 10px;
-    margin-left: 8%;
-    margin-right: 8%;
-    height: 60vh;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: clamp(15px, 3vw, 30px);
+    padding: clamp(5px, 2vw, 10px);
+    margin-left: clamp(5%, 2vw, 8%);
+    margin-right: clamp(5%, 2vw, 8%);
+    min-height: 40vh; 
+    height: auto;
 }
 
 .skill-card {
