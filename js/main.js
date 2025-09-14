@@ -18,4 +18,12 @@ $(function($){
         });
     });
     
+    nav.find('a').on('click', function () {
+        let $el = $(this), 
+        id = $el.attr('href'); 
+        $('html, body').animate({
+            scrollTop: $(id).offset().top - nav_height
+        }, 600);
+        return false;
+    });
 })
