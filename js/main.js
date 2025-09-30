@@ -190,4 +190,49 @@ $(function ($) {
   $(".carousel-btn").on("mouseleave", function () {
     if (!timer) startCarousel();
   });
+
+  $.getJSON("data/portfolio.json", function (data) {
+    let html = "";
+    $.each(data, function (i, item) {
+      if (item.vertical) {
+        html += `
+        <div class="horizontal-split-card">
+          <div class="card-image">
+            <img src="${item.img}" alt="">
+          </div>
+          <div class="card-content">
+            <h2>${item.title}</h2>
+            <p>${item.desc}</p>
+            <div class="card-tags">
+              ${item.tags
+                .map((tag) => `<span class="tag">${tag}</span>`)
+                .join("")}
+            </div>
+\          </div>
+        </div>
+      `;
+      } else {
+        html += `
+        <div class="split-card${item.reverse ? " reverse" : ""}">
+          <div class="card-image">
+            <img src="${item.img}" alt="">
+            <div class="image-overlay">
+              <span class="project-category">${item.title}</span>
+            </div>
+          </div>
+          <div class="card-content">
+            <h2>${item.title}</h2>
+            <p>${item.desc}</p>
+            <div class="card-tags">
+              ${item.tags
+                .map((tag) => `<span class="tag">${tag}</span>`)
+                .join("")}
+            </div>
+          </div>
+        </div>
+      `;
+      }
+    });
+    $("#portfolio-gallery").html(html);
+  });
 });

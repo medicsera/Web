@@ -320,6 +320,11 @@ nav {
   border-radius: 15px;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  margin-top: 20px;
+}
+
+.split-card.reverse {
+  flex-direction: row-reverse;
 }
 
 .card-image {
@@ -389,7 +394,6 @@ nav {
   border-radius: 15px;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  margin: 20px 0;
 }
 
 .card-image-top {
@@ -638,10 +642,21 @@ footer {
     padding: 20px;
   }
 
-  .split-card {
-    flex-direction: column;
-    height: auto;
-    margin: 15px 5%;
+  .split-card,
+  .split-card.reverse {
+    flex-direction: column !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: unset !important;
+    margin: 10px 0;
+  }
+  .card-image {
+    width: 100% !important;
+    height: 200px !important;
+    min-height: 120px;
+  }
+  .card-content {
+    padding: 20px 12px;
   }
 
   .card-image {
@@ -667,7 +682,6 @@ footer {
   }
 
   .horizontal-split-card {
-    margin: 15px 5%;
     max-height: none;
   }
 
@@ -801,7 +815,7 @@ footer {
   }
 
   .card-image img {
-    height: 70vh;
+    height: 50vh;
   }
 
   .card-content {
@@ -817,7 +831,7 @@ footer {
   }
 
   .horizontal-split-card {
-    margin: 20px 4%;
+    margin-top: 20px;
   }
 
   .card-image-top {
@@ -873,7 +887,7 @@ footer {
   }
 
   .horizontal-split-card {
-    margin: 30px 6%;
+    margin-top: 30px;
   }
 }
 
