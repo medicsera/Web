@@ -187,33 +187,74 @@ nav {
 }
 
 .skills-content {
-  display: grid;
+  display: flex;
   grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
   gap: clamp(15px, 3vw, 30px);
   padding: clamp(5px, 2vw, 10px);
   margin-left: clamp(5%, 2vw, 8%);
   margin-right: clamp(5%, 2vw, 8%);
   min-height: 40vh;
-  height: auto;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.carousel-track {
+  width: 500px;
+  height: 150px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
 }
 
 .skill-card {
-  background: hsla(0, 0%, 100%, 0.5);
+  background: hsla(0, 0%, 100%, 0.776);
   border-radius: 15px;
   text-align: center;
   font-size: 1.5em;
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.7);
-  transition: all 0.3s ease;
-  position: relative;
+  transition: all 1s cubic-bezier(0.25, 0.1, 0.25, 1);
+  transform: translateY(-200px);
+  position: absolute;
   overflow: hidden;
+  width: 100%;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
   max-height: 130px;
 }
 
+.skill-card.active {
+  opacity: 1;
+  transform: translateX(0) scale(1.01);
+  pointer-events: auto;
+  z-index: 2;
+}
+
+.carousel-btn {
+  background: #3a98cb;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  width: 38px;
+  height: 38px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  margin: 0 4px;
+  z-index: 3;
+}
+
+.carousel-btn:active {
+  background: #267caa;
+}
+
 .skill-card:hover {
-  transform: translateY(-10px);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-  background: rgba(255, 255, 255, 1);
+  background: rgba(255, 255, 255, 0.863);
 }
 
 .skill-card::before {

@@ -139,4 +139,55 @@ $(function ($) {
       $("#contactForm button").attr("disabled", false);
     }, 1000);
   });
+
+  let timer = null;
+  const interval = 2500;
+
+  function showSkill(idx) {
+    $(".skill-card").removeClass("active").eq(idx).addClass("active");
+  }
+
+  function getCurrentIdx() {
+    return $(".skill-card.active").index();
+  }
+
+  function nextSkill() {
+    let i = getCurrentIdx();
+    i = (i + 1) % $(".skill-card").length;
+    showSkill(i);
+  }
+
+  function prevSkill() {
+    let i = getCurrentIdx();
+    i = (i - 1 + $(".skill-card").length) % $(".skill-card").length;
+    showSkill(i);
+  }
+
+  function startCarousel() {
+    timer = setInterval(nextSkill, interval);
+  }
+
+  function stopCarousel() {
+    clearInterval(timer);
+    timer = null;
+  }
+
+  showSkill(0);
+  startCarousel();
+
+  $(".carousel-track").on("mouseenter", ".skill-card.active", stopCarousel);
+  $(".carousel-track").on("mouseleave", ".skill-card.active", startCarousel);
+
+  $(".carousel-btn.right").on("click", function () {
+    stopCarousel();
+    nextSkill();
+  });
+  $(".carousel-btn.left").on("click", function () {
+    stopCarousel();
+    prevSkill();
+  });
+
+  $(".carousel-btn").on("mouseleave", function () {
+    if (!timer) startCarousel();
+  });
 });
