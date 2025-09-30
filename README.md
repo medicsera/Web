@@ -36,7 +36,7 @@ WEB/
 ⚡ Как запускать
 Важно: Для корректной работы динамических запросов (JSON, ajax, изображения) запускайте проект через локальный сервер (например, Live Server для VSCode):
 
-git clone https://github.com/medicsera/Web.git
+`git clone https://github.com/medicsera/Web.git`
 
 Откройте проект в VSCode.
 
