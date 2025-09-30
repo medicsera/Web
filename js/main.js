@@ -119,7 +119,24 @@ $(function ($) {
 
   $("#contactForm").on("submit", function (e) {
     e.preventDefault();
-    $("#formResult").text("Спасибо! Ваше сообщение отправлено.");
-    this.reset();
+    $("#formResult").text("Sending");
+
+    $.ajax({
+      url: "url",
+      type: "POST",
+      data: $(this).serialize(),
+      dataType: "json",
+      beforeSend: function () {
+        $("#contactForm button").attr("disabled", true);
+      },
+      success: function (responce) {},
+      error: function () {},
+    });
+
+    setTimeout(function () {
+      $("#formResult").text("Thanks! Message sended");
+      $("#contactForm")[0].reset();
+      $("#contactForm button").attr("disabled", false);
+    }, 1000);
   });
 });
