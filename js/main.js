@@ -1,5 +1,4 @@
 $(function ($) {
-  
   let sections = $("section"),
     nav = $("nav"),
     nav_height = nav.outerHeight();
@@ -102,5 +101,25 @@ $(function ($) {
 
   $(window).on("resize", () => {
     if (window.innerWidth > 767) closeDD();
+  });
+
+  $("#openModal").on("click", function () {
+    $("#modalFeedback").fadeIn(200);
+  });
+
+  $("#modalFeedback .close").on("click", function () {
+    $("#modalFeedback").fadeOut(200);
+  });
+
+  $("#modalFeedback").on("click", function (e) {
+    if ($(e.target).is("#modalFeedback")) {
+      $("#modalFeedback").fadeOut(200);
+    }
+  });
+
+  $("#contactForm").on("submit", function (e) {
+    e.preventDefault();
+    $("#formResult").text("Спасибо! Ваше сообщение отправлено.");
+    this.reset();
   });
 });

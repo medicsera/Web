@@ -215,6 +215,29 @@
       </section>
     </main>
     <button id="toTop" class="to-top-btn">↑</button>
+      <div id="modalFeedback" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h2 class="nav-name">Feedback Form</h2>
+          <form id="contactForm">
+            <div class="text-field">
+              <label for="name">Name*:</label>
+              <input type="text" id="name" name="name" required />
+            </div>
+            <div class="text-field">
+              <label for="email">Email*:</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+            <div class="text-field">
+              <label for="message">Message*:</label>
+              <textarea id="message" name="message" rows="4" required></textarea>
+            </div>
+            <button type="submit">Send feedback</button>
+            <div id="formResult"></div>
+          </form>
+        </div>
+      </div>
+    </div>
     <footer>
       <div>
         <a
@@ -223,9 +246,9 @@
           >GitHub Code</a
         >
       </div>
+      <button id="openModal">Feedback</button>
       <div>© MedicSera 2025</div>
     </footer>
-
     <script>
       const starsWrapper = document.querySelector("#stars-container");
       const stars = new Array(200).fill(0).map(() => {
