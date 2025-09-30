@@ -48,4 +48,4 @@ WEB/
 📬 Обратная связь
 Для обратной связи используйте кнопку "Feedback" — форма работает с имитацией отправки (без backend).
 
-Автор: MedicSera
+[Автор: MedicSera](https://github.com/medicsera)
