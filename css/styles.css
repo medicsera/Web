@@ -167,7 +167,7 @@ nav {
 
 .photo-placeholder {
   width: 100%;
-  height: auto;
+  height: 100%;
   border: 3px solid rgb(214, 214, 214);
   background: #f9f9f9;
   display: flex;
@@ -181,7 +181,7 @@ nav {
 
 .photo-img {
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
   border-radius: 10px;
 }
@@ -815,9 +815,6 @@ footer {
     height: 70vh;
   }
 
-  .card-image img {
-    height: 50vh;
-  }
 
   .card-content {
     padding: 40px 30px;
