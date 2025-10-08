@@ -1,0 +1,13 @@
+@use "./variables" as *;
+
+@mixin flex-center($direction: row) {
+    display: flex;
+    justify-content: center;
+    flex-direction: $direction;
+}
+
+@mixin border{
+    border-width: 2px;
+    border-radius: 10px;
+    border-color: $color-border;
+}
