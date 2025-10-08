@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Telegram Bot",
+    "desc": "A telegram bot that can give recipes based on ingredients,cuisine, and random recipes.",
+    "tags": ["Python", "python-telegram-bot (library)"],
+    "img": "images/telegram-bot.png",
+    "reverse": false,
+    "vertical": false
+  },
+  {
+    "title": "Recipe Website",
+    "desc": "A website that offers recipes based on the ingredients entered andthe type of dish. <br />The functionality is almost the same as that of Telegram bot, but migrated to the web version.",
+    "tags": ["HTML", "JS", "CSS"],
+    "img": "images/web-site.png",
+    "reverse": true,
+    "vertical": false
+  },
+  {
+    "title": "The store's website",
+    "desc": "The website of an existing building materials store. <br />Thissite is a project that is still under development, and it was onit that I decided to get acquainted and start learning React.",
+    "tags": ["React", "Figma", "CSS"],
+    "img": "images/story-website.png",
+    "reverse": false,
+    "vertical": true
+  }
+]
