@@ -17,7 +17,11 @@ $(document).ready(function(){
                 </div>
             </div>
         `
-        $('.task').append(newTask);
+        const $newTask = $(newTask).css({opacity: 0});
+        $('.task').append($newTask);
+        setTimeout(function() {
+        $newTask.css({opacity: 1});
+        }, 10);
         $('.add-task-input').val('');
         taskId++
     })
@@ -42,4 +46,6 @@ $(document).ready(function(){
             $task.remove();
         },500);
     })
+
+
 })
