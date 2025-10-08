@@ -17,6 +17,7 @@
         background: $color-bg;
         justify-content: space-between;
         margin-top: 20px ;
+        transition: opacity 0.5s, height 0.5s, margin 0.5s, padding 0.5s;
 
         &-right{
             @include flex-center;
