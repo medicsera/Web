@@ -1,0 +1,51 @@
+@use "../utils/variables" as *;
+@use "../utils/mixins" as *;
+
+.task{
+    padding: 60px 20px 20px;
+    font-size: $stat-font-size;
+    display: inline-block;
+    margin: 0 50px;
+
+    
+    &-item{
+        @include flex-center;
+        @include border;
+        align-items: center;
+        width: 440px;
+        height: 76px;
+        background: $color-bg;
+        justify-content: space-between;
+        margin-top: 20px ;
+
+        &-right{
+            @include flex-center;
+            align-items: center; 
+            margin-right: 20px;
+        }
+
+        &-left{
+            margin-left: 20px;
+        }
+    }
+
+    &-checkbox{
+        width: 28px;
+        height: 28px;
+        margin: 0 10px;
+        accent-color: $color-dark-purple;
+    }
+    
+
+    &-text{
+        max-width: 200px;
+        word-break: break-all;
+    }
+
+    &-btn{
+        font-size: 0.9em;
+        background: $color-dark-purple;
+        color: $color-white;
+        border-radius: 5px;
+    }
+}
