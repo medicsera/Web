@@ -24,5 +24,9 @@ $(document).ready(function(){
 
     $('span').bind('dblclick',function(){
         $(this).attr('contentEditable',true)
-    });
+    }).blur(
+        function(){
+            $(this).attr('contentEditable',false)
+        }
+    )
 })
