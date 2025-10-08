@@ -34,4 +34,12 @@ $(document).ready(function(){
         const $taskText = $(this).closest('.task-item').find('.task-text');
         $taskText.toggleClass('task-text--done',$(this).is(':checked'));
     })
+
+    $(document).on('click','.task-btn',function(){
+        const $task = $(this).closest('.task-item')
+        $task.addClass('removing');
+        setTimeout(function(){
+            $task.remove();
+        },500);
+    })
 })
