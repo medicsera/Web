@@ -21,4 +21,8 @@ $(document).ready(function(){
         $('.add-task-input').val('');
         taskId++
     })
+
+    $('span').bind('dblclick',function(){
+        $(this).attr('contentEditable',true)
+    });
 })
