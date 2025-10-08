@@ -1,3 +1,8 @@
+.task-text--done {
+  color: #57C76F;
+  text-decoration: line-through;
+}
+
 .page {
   display: flex;
   justify-content: center;
@@ -82,6 +87,7 @@ body {
 .task-text {
   max-width: 200px;
   word-break: break-all;
+  transition: color 0.4s, text-decoration 0.4s;
 }
 .task-btn {
   font-size: 0.9em;

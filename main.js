@@ -29,4 +29,9 @@ $(document).ready(function(){
             $(this).attr('contentEditable',false)
         }
     )
+
+    $(document).on('change','.task-checkbox',function(){
+        const $taskText = $(this).closest('.task-item').find('.task-text');
+        $taskText.toggleClass('task-text--done',$(this).is(':checked'));
+    })
 })

@@ -7,3 +7,8 @@ $color-green: #57C76F;
 $color-border: #3E1671;
 
 $stat-font-size: 1.3em;
+
+.task-text--done{
+    color: $color-green;
+    text-decoration: line-through;
+}
