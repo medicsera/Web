@@ -1,0 +1,26 @@
+@use "../utils/variables" as *;
+@use "../utils/mixins" as *;
+
+
+.add-task-form{
+    @include flex-center;
+    height: 40px;
+    margin-right: 20px;
+    padding-top: 20px;
+    
+    .add-task-input{
+        @include border;
+        width: 360px;
+        margin: 0 20px;
+        font-size: $stat-font-size;
+        padding-left: 20px;
+        
+    }
+
+    &-btn{
+        width: 40px;
+        font-size: 1.5em;
+        @include border;
+        background: $color-light-purple;
+    }
+}
