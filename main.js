@@ -57,5 +57,11 @@ $(document).ready(function(){
         },500);
     })
 
-
+    $('.search-task-input').on('input',function(){
+        const value = $(this).val().toLowerCase();
+        $('.task-item').each(function(){
+            const text  = $(this).find('.task-text').text().toLowerCase()
+            $(this).toggle(text.includes(value));
+        })
+    })
 })

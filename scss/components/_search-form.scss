@@ -8,13 +8,30 @@
     margin-right: 20px;
     padding-top: 20px;
     
-    .search-task-input{
-        @include border;
-        width: 360px;
+    .search-task{
+        display: flex;
+        align-items: center;
         margin: 0 20px;
+        border: 4px;
+        border-radius: 10px;
+        background: $color-white;
+
+        .search-task-input{
+        width: 360px;
         font-size: $stat-font-size;
-        padding-left: 20px;
+        margin-left: 10px;
+        border: 0;
+        height: 90%;
+        outline: none;
+        }
         
+        .search-task-lupe{
+            width: 30px;
+            height: 100%;
+            border: 0;
+            background: $color-white;
+            margin-right: 10px;
+        }
     }
 
     .open-modal-btn{

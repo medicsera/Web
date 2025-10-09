@@ -38,14 +38,28 @@ body {
   margin-right: 20px;
   padding-top: 20px;
 }
-.search-task-form .search-task-input {
-  border-width: 2px;
-  border-radius: 10px;
-  border-color: #3E1671;
-  width: 360px;
+.search-task-form .search-task {
+  display: flex;
+  align-items: center;
   margin: 0 20px;
+  border: 4px;
+  border-radius: 10px;
+  background: #fff;
+}
+.search-task-form .search-task .search-task-input {
+  width: 360px;
   font-size: 1.3em;
-  padding-left: 20px;
+  margin-left: 10px;
+  border: 0;
+  height: 90%;
+  outline: none;
+}
+.search-task-form .search-task .search-task-lupe {
+  width: 30px;
+  height: 100%;
+  border: 0;
+  background: #fff;
+  margin-right: 10px;
 }
 .search-task-form .open-modal-btn {
   width: 40px;
