@@ -35,6 +35,7 @@ body {
   justify-content: center;
   flex-direction: row;
   height: 40px;
+  max-width: 560px;
   margin-right: 20px;
   padding-top: 20px;
 }
@@ -71,10 +72,12 @@ body {
 }
 
 .task {
-  padding: 60px 20px 20px;
+  padding: 60px 20px;
   font-size: 1.3em;
   display: inline-block;
-  margin: 0 50px;
+  max-width: 560px;
+  display: grid;
+  justify-content: center;
 }
 .task-item {
   display: flex;
@@ -84,7 +87,7 @@ body {
   border-radius: 10px;
   border-color: #3E1671;
   align-items: center;
-  width: 440px;
+  width: 470px;
   height: 76px;
   background: #F8F8F8;
   justify-content: space-between;
@@ -163,6 +166,7 @@ body {
   width: 280px;
   padding-left: 20px;
   font-size: 1.3em;
+  outline: none;
 }
 .modal-task-form .modal-task-btns {
   margin-top: auto;

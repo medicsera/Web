@@ -2,17 +2,18 @@
 @use "../utils/mixins" as *;
 
 .task{
-    padding: 60px 20px 20px;
+    padding: 60px 20px;
     font-size: $stat-font-size;
     display: inline-block;
-    margin: 0 50px;
+    max-width: 560px;
+    display: grid;
+    justify-content: center;
 
-    
     &-item{
         @include flex-center;
         @include border;
         align-items: center;
-        width: 440px;
+        width: 470px;
         height: 76px;
         background: $color-bg;
         justify-content: space-between;

@@ -5,6 +5,7 @@
 .search-task-form{
     @include flex-center;
     height: 40px;
+    max-width: 560px;
     margin-right: 20px;
     padding-top: 20px;
     
