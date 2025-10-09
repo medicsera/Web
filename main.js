@@ -2,27 +2,30 @@ $(document).ready(function(){
     let taskId = 0;
     let taskData = [];
 
-    $('.open-modal-btn').on('click', function(){
-        $('.modal').fadeIn(200);
-        $('#modal-task-input').val('').focus()
-    })
+    function loadTasks() {
+        const saved = localStorage.getItem('taskData');
+        if (saved) {
+            taskData = JSON.parse(saved);
+            taskId = taskData.length ? Math.max(...taskData.map(t => t.id)) + 1 : 0;
+        }
+    }
 
-    $('.modal-task-cancel').on('click',function(){
-        $('.modal').fadeOut(200);
-    })
-    
+    function saveTasks() {
+        localStorage.setItem('taskData', JSON.stringify(taskData));
+    }
+
     function renderTasks(){
         $('.task').empty();
 
         const sortedTasks = taskData.slice().sort((a,b) => {
             if (a.completed === b.completed){
-                return a.id - b.id
+                return a.id - b.id;
             }
-            return a.completed - b.completed
+            return a.completed - b.completed;
         });
 
         sortedTasks.forEach(task => {
-            const completedClass = task.completed ? 'completed': ''
+            const completedClass = task.completed ? 'completed': '';
             const newTask = `
              <div class="task-item" data-id=${task.id}>
                 <div class="task-item-left">
@@ -32,23 +35,29 @@ $(document).ready(function(){
                     <input class="task-checkbox" type="checkbox" ${task.completed ? 'checked': ''} />
                     <button class="del-btn" title="Delete">&#128465;</button>
                 </div>
-            </div>
-            `;
-            $('.task').append(newTask)
-        })
+             </div>
+             `;
+             $('.task').append(newTask);
+        });
     }
 
-    $.getJSON('./data/tasks.json', function(data){
-        taskData = data;
-        taskId = Math.max(...taskData.map(t => t.id)) +  1;
-        renderTasks();
-    });
-    
+    loadTasks();
+    renderTasks();
+
+    $('.open-modal-btn').on('click', function(){
+        $('.modal').fadeIn(200);
+        $('#modal-task-input').val('').focus()
+    })
+
+    $('.modal-task-cancel').on('click',function(){
+        $('.modal').fadeOut(200);
+    })
+
     $('.modal-task-form').on('submit', function(e){
         e.preventDefault();
         const taskText = $('.modal-task-input').val().trim();
         if (!taskText) return;
-        
+
         const newTask = {
             id: taskId,
             text: taskText,
@@ -56,11 +65,11 @@ $(document).ready(function(){
         };
 
         taskData.unshift(newTask);
-        taskId++
+        taskId++;
+        saveTasks();
         renderTasks();
         $('.modal').fadeOut(200)
         $('#modal-task-input').val('');
-        
     })
 
     $(document).on('dblclick', 'span.task-text' ,function(){
@@ -69,28 +78,38 @@ $(document).ready(function(){
 
     $(document).on('blur', 'span.task-text', function(){
         $(this).attr('contentEditable',false)
+        const $task = $(this).closest('.task-item')
+        const id = +$task.data('id')
+        const task = taskData.find(t => t.id === id)
+        if (task) {
+            task.text = $(this).text();
+            saveTasks();
+        }
     })
 
     $(document).on('change','.task-checkbox',function(){
         const $task = $(this).closest('.task-item')
         const id = +$task.data('id')
         const task = taskData.find(t => t.id === id);
-        
+
         if (task) {
             task.completed = this.checked;
+            saveTasks();
             renderTasks();
         }
     });
 
     $(document).on('click','.del-btn',function(){
         const $task = $(this).closest('.task-item')
+        const id = +$task.data('id')
         if (confirm("Точно хотите удалить задачу?")){
+            taskData = taskData.filter(t => t.id !== id);
+            saveTasks();
             $task.addClass('removing');
             setTimeout(function(){
-            $task.remove();
-         },400);
+                renderTasks();
+            },400);
         }
-        
     })
 
     $('.search-task-input').on('input',function(){
@@ -107,6 +126,4 @@ $(document).ready(function(){
             $(this).blur();
         }
     })
-
-
 })
