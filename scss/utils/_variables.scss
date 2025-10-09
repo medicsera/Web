@@ -13,7 +13,7 @@ $bg-gradient: linear-gradient(to bottom, $color-light-purple, $color-purple);
 
 $stat-font-size: 1.3em;
 
-.task-text--done{
+.task-text.completed{
     color: $color-green;
     text-decoration: line-through;
 }

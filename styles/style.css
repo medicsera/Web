@@ -1,4 +1,4 @@
-.task-text--done {
+.task-text.completed {
   color: #57C76F;
   text-decoration: line-through;
 }
