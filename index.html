@@ -8,9 +8,9 @@
 </head>
 <body class="page">
     <div class="page__container">
-        <form class="add-task-form">
-            <input class="add-task-input" type="text" placeholder="Add a new task" />
-            <button class="add-task-form-btn" type="submit">+</button>
+        <form class="search-task-form">
+            <input class="search-task-input" type="text" placeholder="Search task" />
+            <button class="open-modal-btn" type="button">+</button>
         </form>
         <div class="task">
             <div class="task-item">
@@ -19,9 +19,21 @@
                 </div>
                 <div class="task-item-right">
                     <input class="task-checkbox" type="checkbox" />
-                    <button class="task-btn" title="Delete">&#128465;</button>
+                    <button class="del-btn" title="Delete">&#128465;</button>
                 </div>
             </div>
+        </div>
+    </div> 
+    <div class="modal" style="display: none;">
+        <div class="modal-task">
+            <form class="modal-task-form">
+                <label class="modal-task-label" for="modal-task-input">Новая задача</label>
+                <input id="modal-task-input" class="modal-task-input" required type="text">
+                <div class="modal-task-btns">
+                    <button class="modal-task-cancel" type="button">Отмена</button>
+                    <button class="modal-task-add" type="submit">Добавить</button>
+                </div>
+            </form>
         </div>
     </div>
 </body>

@@ -22,7 +22,17 @@
         &-right{
             @include flex-center;
             align-items: center; 
-            margin-right: 20px;
+            margin-right: 30px;
+
+            .del-btn{
+                font-size: 0.9em;
+                width: 28px;
+                height: 28px;
+                background: $color-dark-purple;
+                color: $color-white;
+                border-radius: 5px;
+                border: 0;
+             }
         }
 
         &-left{
@@ -44,10 +54,5 @@
         transition: color 0.4s, text-decoration 0.4s;
     }
 
-    &-btn{
-        font-size: 0.9em;
-        background: $color-dark-purple;
-        color: $color-white;
-        border-radius: 5px;
-    }
+    
 }

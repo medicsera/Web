@@ -2,13 +2,13 @@
 @use "../utils/mixins" as *;
 
 
-.add-task-form{
+.search-task-form{
     @include flex-center;
     height: 40px;
     margin-right: 20px;
     padding-top: 20px;
     
-    .add-task-input{
+    .search-task-input{
         @include border;
         width: 360px;
         margin: 0 20px;
@@ -17,7 +17,7 @@
         
     }
 
-    &-btn{
+    .open-modal-btn{
         width: 40px;
         font-size: 1.5em;
         @include border;

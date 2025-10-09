@@ -1,5 +1,5 @@
 @use "../utils/variables" as *;
 
 body{
-    background:linear-gradient(to bottom, $color-light-purple, $color-purple);
+    background: $bg-gradient
 }

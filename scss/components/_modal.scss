@@ -1,0 +1,67 @@
+@use "../utils/variables" as *;
+@use "../utils/mixins" as *;
+
+
+.modal{
+    position: fixed;
+    left: 0; top: 0; right: 0; bottom: 0;
+    background: $bg-gradient;
+    @include flex-center;
+    align-items: center;
+    z-index: 1000;
+    
+
+    &-task{
+        background: $color-dark-purple;
+        padding: 20px;
+        @include border;
+        min-width: 300px;
+        height: 200px;
+        margin-bottom: 10%;
+
+        &-form{
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+
+            .modal-task-label{
+                color: $color-white;
+                font-size: $stat-font-size*1.3;
+                display: flex;
+                justify-content: center;
+                margin-bottom: 30px;
+            }
+
+            .modal-task-input{  
+                border: 0;
+                border-radius: 10px;
+                width: 280px;
+                padding-left: 20px;
+                font-size: $stat-font-size;
+            }
+
+            .modal-task-btns{
+                margin-top: auto;
+                display: flex;
+                justify-content: space-between;
+
+                .modal-task-cancel{
+                    background: $color-red;
+                    font-size: $stat-font-size*0.9;
+                    color: $color-white;
+                    border: 0;
+                    border-radius: 5px;
+                    padding: 5px;
+                }
+
+                .modal-task-add{
+                    background: $color-green;
+                    font-size: $stat-font-size*0.9;
+                    color: $color-black;
+                    border: 0;
+                    border-radius: 5px;
+                }
+            }
+        }
+    }
+}

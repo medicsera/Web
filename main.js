@@ -1,9 +1,18 @@
 $(document).ready(function(){
     let taskId = 1;
 
-    $('.add-task-form').on('submit', function(e){
+    $('.open-modal-btn').on('click', function(){
+        $('.modal').fadeIn(200);
+        $('#modal-task-input').val('').focus()
+    })
+
+    $('.modal-task-cancel').on('click',function(){
+        $('.modal').fadeOut(200);
+    })
+
+    $('.modal-task-form').on('submit', function(e){
         e.preventDefault();
-        const taskText = $('.add-task-input').val().trim();
+        const taskText = $('.modal-task-input').val().trim();
         if (!taskText) return;
         
         const newTask = `
@@ -13,7 +22,7 @@ $(document).ready(function(){
                 </div>
                 <div class="task-item-right">
                     <input class="task-checkbox" type="checkbox" />
-                    <button class="task-btn" title="Delete">&#128465;</button>
+                    <button class="del-btn" title="Delete">&#128465;</button>
                 </div>
             </div>
         `
@@ -22,7 +31,8 @@ $(document).ready(function(){
         setTimeout(function() {
         $newTask.css({opacity: 1});
         }, 10);
-        $('.add-task-input').val('');
+        $('.modal-task-input').val('');
+        $('.modal').fadeOut(200)
         taskId++
     })
 
@@ -39,7 +49,7 @@ $(document).ready(function(){
         $taskText.toggleClass('task-text--done',$(this).is(':checked'));
     })
 
-    $(document).on('click','.task-btn',function(){
+    $(document).on('click','.del-btn',function(){
         const $task = $(this).closest('.task-item')
         $task.addClass('removing');
         setTimeout(function(){
