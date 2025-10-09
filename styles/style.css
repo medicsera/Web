@@ -100,6 +100,7 @@ body {
   flex-direction: row;
   align-items: center;
   margin-right: 30px;
+  opacity: 0;
 }
 .task-item-right .del-btn {
   font-size: 0.9em;
@@ -109,6 +110,10 @@ body {
   color: #fff;
   border-radius: 5px;
   border: 0;
+}
+.task-item:hover .task-item-right {
+  transition: all 0.3s ease;
+  opacity: 1;
 }
 .task-item-left {
   margin-left: 20px;

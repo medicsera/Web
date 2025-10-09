@@ -36,13 +36,13 @@ $(document).ready(function(){
         taskId++
     })
 
-    $('span').bind('dblclick',function(){
-        $(this).attr('contentEditable',true)
-    }).blur(
-        function(){
-            $(this).attr('contentEditable',false)
-        }
-    )
+    $(document).on('dblclick', 'span.task-text' ,function(){
+        $(this).attr('contentEditable',true).focus()
+    })
+
+    $(document).on('blur', 'span.task-text', function(){
+        $(this).attr('contentEditable',false)
+    })
 
     $(document).on('change','.task-checkbox',function(){
         const $taskText = $(this).closest('.task-item').find('.task-text');
