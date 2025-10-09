@@ -2,11 +2,11 @@
   {
     "id": 1,
     "text": "To study React fundamentals",
-    "completed": false
+    "completed": true
   },
   {
     "id": 2,
     "text": "Write a blog post",
-    "completed": true
+    "completed": false
   }
 ]

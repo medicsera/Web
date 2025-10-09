@@ -13,12 +13,20 @@ $(document).ready(function(){
     
     function renderTasks(){
         $('.task').empty();
-        taskData.forEach(task => {
-            const comletedClass = task.completed ? 'completed': ''
+
+        const sortedTasks = taskData.slice().sort((a,b) => {
+            if (a.completed === b.completed){
+                return a.id - b.id
+            }
+            return a.completed - b.completed
+        });
+
+        sortedTasks.forEach(task => {
+            const completedClass = task.completed ? 'completed': ''
             const newTask = `
              <div class="task-item" data-id=${task.id}>
                 <div class="task-item-left">
-                    <span class="task-text ${comletedClass}" contenteditable="false">${$('<div>').text(task.text).html()}</span>
+                    <span class="task-text ${completedClass}" contenteditable="false">${$('<div>').text(task.text).html()}</span>
                 </div>
                 <div class="task-item-right">
                     <input class="task-checkbox" type="checkbox" ${task.completed ? 'checked': ''} />
@@ -44,10 +52,10 @@ $(document).ready(function(){
         const newTask = {
             id: taskId,
             text: taskText,
-            comleted: false
+            completed: false
         };
 
-        taskData.push(newTask);
+        taskData.unshift(newTask);
         taskId++
         renderTasks();
         $('.modal').fadeOut(200)
@@ -64,9 +72,15 @@ $(document).ready(function(){
     })
 
     $(document).on('change','.task-checkbox',function(){
-        const $taskText = $(this).closest('.task-item').find('.task-text');
-        $taskText.toggleClass('completed',this.checked);
-    })
+        const $task = $(this).closest('.task-item')
+        const id = +$task.data('id')
+        const task = taskData.find(t => t.id === id);
+        
+        if (task) {
+            task.completed = this.checked;
+            renderTasks();
+        }
+    });
 
     $(document).on('click','.del-btn',function(){
         const $task = $(this).closest('.task-item')
