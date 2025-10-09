@@ -2,6 +2,7 @@ $(document).ready(function(){
     let taskId = 0;
     let taskData = [];
 
+    // Загрузка задач
     function loadTasks() {
         const saved = localStorage.getItem('taskData');
         if (saved) {
@@ -10,10 +11,12 @@ $(document).ready(function(){
         }
     }
 
+    // Сохранение задач
     function saveTasks() {
         localStorage.setItem('taskData', JSON.stringify(taskData));
     }
 
+    // Рендер задач
     function renderTasks(){
         $('.task').empty();
 
@@ -44,15 +47,18 @@ $(document).ready(function(){
     loadTasks();
     renderTasks();
 
+    // Открытие модального окна
     $('.open-modal-btn').on('click', function(){
         $('.modal').fadeIn(200);
         $('#modal-task-input').val('').focus()
     })
 
+    // Закрытие модального окна
     $('.modal-task-cancel').on('click',function(){
         $('.modal').fadeOut(200);
     })
 
+    // Создание новой задачи
     $('.modal-task-form').on('submit', function(e){
         e.preventDefault();
         const taskText = $('.modal-task-input').val().trim();
@@ -72,6 +78,7 @@ $(document).ready(function(){
         $('#modal-task-input').val('');
     })
 
+    // Редактирование задачи
     $(document).on('dblclick', 'span.task-text' ,function(){
         $(this).attr('contentEditable',true).focus()
     })
@@ -87,6 +94,15 @@ $(document).ready(function(){
         }
     })
 
+    // Enter для подтверждения изменения задачи
+    $(document).on('keydown','span.task-text[contenteditable="true"]',function(e){
+        if(e.key === "Enter"){
+            e.preventDefault()
+            $(this).blur();
+        }
+    })
+
+    // Отметка выполненной задачи
     $(document).on('change','.task-checkbox',function(){
         const $task = $(this).closest('.task-item')
         const id = +$task.data('id')
@@ -99,6 +115,7 @@ $(document).ready(function(){
         }
     });
 
+    // Удаление задачи
     $(document).on('click','.del-btn',function(){
         const $task = $(this).closest('.task-item')
         const id = +$task.data('id')
@@ -112,18 +129,12 @@ $(document).ready(function(){
         }
     })
 
+    // Поиск задачи
     $('.search-task-input').on('input',function(){
         const value = $(this).val().toLowerCase();
         $('.task-item').each(function(){
             const text  = $(this).find('.task-text').text().toLowerCase()
             $(this).toggle(text.includes(value));
         })
-    })
-
-    $(document).on('keydown','span.task-text[contenteditable="true"]',function(e){
-        if(e.key === "Enter"){
-            e.preventDefault()
-            $(this).blur();
-        }
     })
 })
