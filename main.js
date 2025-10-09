@@ -67,4 +67,13 @@ $(document).ready(function(){
             $(this).toggle(text.includes(value));
         })
     })
+
+    $(document).on('keydown','span.task-text[contenteditable="true"]',function(e){
+        if(e.key === "Enter"){
+            e.preventDefault()
+            $(this).blur();
+        }
+    })
+
+
 })
