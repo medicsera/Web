@@ -51,10 +51,13 @@ $(document).ready(function(){
 
     $(document).on('click','.del-btn',function(){
         const $task = $(this).closest('.task-item')
-        $task.addClass('removing');
-        setTimeout(function(){
+        if (confirm("Точно хотите удалить задачу?")){
+            $task.addClass('removing');
+            setTimeout(function(){
             $task.remove();
-        },500);
+         },400);
+        }
+        
     })
 
     $('.search-task-input').on('input',function(){
