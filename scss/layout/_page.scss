@@ -1,4 +1,5 @@
 @use "../utils/variables" as *;
+@use "../utils/mixins" as *;
 
 .page{
     display: flex;
@@ -7,13 +8,32 @@
     height: 100vh;
 
     &__container{
-        width: 580px;
-        min-height: 750px;
+        max-width: 580px;
+        height: 75%;
         margin: 5%;
         padding: 32px 24px;
         border-radius: 16px;
         background: $color-dark-purple;
         overflow: auto;
         scrollbar-width: none;
+    }
+}
+
+@include respond-to(tablet){
+    .page{
+
+        &__container{
+            width: 500px;
+        }
+    }
+
+}
+
+@include respond-to(mobile){
+    .page{
+
+        &__container{
+            width: 250px;
+        }
     }
 }

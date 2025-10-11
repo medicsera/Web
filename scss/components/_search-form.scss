@@ -18,7 +18,7 @@
         background: $color-white;
 
         .search-task-input{
-        width: 360px;
+        max-width: 360px;
         font-size: $stat-font-size;
         margin-left: 10px;
         border: 0;
@@ -40,5 +40,26 @@
         font-size: 1.5em;
         @include border;
         background: $color-light-purple;
+    }
+}
+
+@include respond-to(mobile){
+    .search-task-form{
+        height: 30px;
+        width: 230px;
+        
+        .search-task{
+            width: 100%;
+        }  
+        
+        .search-task-input{
+            width: 150px;
+            font-size: 1.1em;
+        }
+
+        .open-modal-btn{
+            height: 30px;
+            font-size: 1.3em;
+        }
     }
 }

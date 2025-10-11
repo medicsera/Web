@@ -36,8 +36,8 @@
   height: 100vh;
 }
 .page__container {
-  width: 580px;
-  min-height: 750px;
+  max-width: 580px;
+  height: 75%;
   margin: 5%;
   padding: 32px 24px;
   border-radius: 16px;
@@ -46,20 +46,20 @@
   scrollbar-width: none;
 }
 
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .page__container {
+    width: 500px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .page__container {
+    width: 250px;
+  }
+}
 body {
   background: var(--bg-color);
 }
 
-@media screen and (min-width: 768px) and (max-width: 1023px) {
-  body {
-    background: green;
-  }
-}
-@media screen and (max-width: 767px) {
-  body {
-    background: red;
-  }
-}
 .search-task-form {
   display: flex;
   justify-content: center;
@@ -78,7 +78,7 @@ body {
   background: #fff;
 }
 .search-task-form .search-task .search-task-input {
-  width: 360px;
+  max-width: 360px;
   font-size: 1.3em;
   margin-left: 10px;
   border: 0;
@@ -101,6 +101,23 @@ body {
   background: #DFC7FF;
 }
 
+@media screen and (max-width: 767px) {
+  .search-task-form {
+    height: 30px;
+    width: 230px;
+  }
+  .search-task-form .search-task {
+    width: 100%;
+  }
+  .search-task-form .search-task-input {
+    width: 150px;
+    font-size: 1.1em;
+  }
+  .search-task-form .open-modal-btn {
+    height: 30px;
+    font-size: 1.3em;
+  }
+}
 .task {
   padding: 60px 20px;
   font-size: 1.3em;
@@ -161,6 +178,27 @@ body {
   transition: color 0.4s, text-decoration 0.4s;
 }
 
+@media screen and (max-width: 767px) {
+  .task {
+    max-width: 100%;
+    font-size: 1.1em;
+  }
+  .task-item {
+    width: 100%;
+  }
+  .task-item-right {
+    margin-right: 5px;
+  }
+  .task-item-right .del-btn {
+    width: 20px;
+    height: 20px;
+    font-size: 0.7em;
+  }
+  .task-checkbox {
+    width: 20px;
+    height: 20px;
+  }
+}
 .modal {
   position: fixed;
   left: 0;
@@ -237,6 +275,18 @@ body {
   z-index: 1000;
   right: 25px;
   bottom: 25px;
+}
+
+@media screen and (max-width: 767px) {
+  .theme-toggle {
+    height: 40px;
+    width: 40px;
+    border-radius: 20px;
+  }
+  .theme-svg {
+    height: 20px;
+    width: 20px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

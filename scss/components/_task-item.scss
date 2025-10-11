@@ -64,3 +64,30 @@
     }
     
 }
+
+@include respond-to(mobile){
+    .task{
+        max-width: 100%;
+        font-size: 1.1em;
+
+        &-item{
+            width: 100%;
+
+            &-right{
+                margin-right: 5px;
+
+                .del-btn{
+                    width: 20px;
+                    height: 20px;
+                    font-size: 0.7em;
+                }
+            }
+        }
+
+        &-checkbox{
+            width: 20px;
+            height: 20px;
+        }
+
+    }
+}

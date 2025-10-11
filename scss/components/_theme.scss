@@ -11,4 +11,19 @@
     z-index: 1000;
     right: 25px;
     bottom: 25px;
+
+    
+}
+
+@include respond-to(mobile){
+    .theme-toggle{
+        height: 40px;
+        width: 40px;
+        border-radius: 20px;
+    }
+    
+    .theme-svg{
+        height: 20px;
+        width: 20px;
+    }
 }

@@ -3,7 +3,7 @@
 ;
 @use "./layout/page" as *;
 
-@use "./base/typography" as *;
+@use "./base/base" as *;
 
 @use "./components/search-form" as *;
 @use "./components/task-item" as *;
