@@ -8,10 +8,16 @@ $color-dark-purple: #1D1825;
 $color-red: #ff0000c4;
 $color-green: #57C76F;
 $color-border: #3E1671;
+$color-black-theme: #15101C;
 
-$bg-gradient: linear-gradient(to bottom, $color-light-purple, $color-purple);
+$bg-gradient-light: linear-gradient(to bottom, $color-light-purple, $color-purple);
 
 $stat-font-size: 1.3em;
+
+$breakpoint-mobile-max: 767px;
+$breakpoint-tablet-min: 768px;
+$breakpoint-tablet-max: 1023px;
+$breakpoint-desktop-min: 1024px;
 
 .task-text.completed{
     color: $color-green;
@@ -24,4 +30,21 @@ $stat-font-size: 1.3em;
     margin: 0;
     padding: 0;
     overflow: hidden;
+}
+
+:root {
+    --bg-color: #{$bg-gradient-light};
+    --color-item: #{$color-bg};
+    --color-btn-bg: #{$color-dark-purple};
+    --color-btn-img: #{$color-white};
+    --color-font: #{$color-black};
+    --color-switch: #{$color-light-purple};
+}
+:root.dark-theme{
+    --bg-color: #{$color-black-theme};
+    --color-item: #{$color-black-theme};
+    --color-btn-bg: #{$color-light-purple};
+    --color-btn-img: #{$color-black-theme};
+    --color-font: #{$color-white};
+    --color-switch: #{$color-dark-purple};
 }

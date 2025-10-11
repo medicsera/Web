@@ -1,5 +1,17 @@
-@use "../utils/variables" as *;
+@use "../utils/mixins" as *;
 
 body{
-    background: $bg-gradient
+    background: var(--bg-color);
+}
+
+@include respond-to(tablet){
+    body{
+        background: green;
+    }
+}
+
+@include respond-to(mobile){
+    body{
+        background: red;
+    }
 }

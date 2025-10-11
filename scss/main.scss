@@ -1,6 +1,11 @@
 @use "./utils/variables" as *;
+@use "./utils/mixins" as *
+;
 @use "./layout/page" as *;
+
 @use "./base/typography" as *;
+
 @use "./components/search-form" as *;
 @use "./components/task-item" as *;
 @use "./components/modal" as *;
+@use "./components/theme" as *;

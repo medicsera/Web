@@ -1,0 +1,14 @@
+@use "../utils/mixins" as *;
+
+.theme-toggle{
+    width: 70px;
+    height: 70px;
+    border-radius: 35px;
+    background-color: var(--color-switch);
+    color: var(--color-font);
+    border: 0;
+    position: fixed;
+    z-index: 1000;
+    right: 25px;
+    bottom: 25px;
+}

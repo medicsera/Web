@@ -12,10 +12,11 @@
     &-item{
         @include flex-center;
         @include border;
+        color: var(--color-font);
         align-items: center;
         width: 470px;
         height: 76px;
-        background: $color-bg;
+        background: var(--color-item);
         justify-content: space-between;
         margin-top: 20px ;
         transition: opacity 0.5s, height 0.5s, margin 0.5s, padding 0.5s;
@@ -30,8 +31,8 @@
                 font-size: 0.9em;
                 width: 28px;
                 height: 28px;
-                background: $color-dark-purple;
-                color: $color-white;
+                background: var(--color-btn-bg);
+                color: var(--color-btn-img);
                 border-radius: 5px;
                 border: 0;
              }
@@ -52,7 +53,7 @@
         width: 28px;
         height: 28px;
         margin: 0 10px;
-        accent-color: $color-dark-purple;
+        accent-color: var(--color-btn-bg);
     }
     
 

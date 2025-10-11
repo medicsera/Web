@@ -137,4 +137,9 @@ $(document).ready(function(){
             $(this).toggle(text.includes(value));
         })
     })
+    
+    // Изменение темы  
+    $('.theme-toggle').on('click', function(){
+        $(":root").toggleClass('dark-theme');
+    });
 })
