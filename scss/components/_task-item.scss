@@ -4,8 +4,7 @@
 .task{
     padding: 60px 20px;
     font-size: $stat-font-size;
-    display: inline-block;
-    max-width: 560px;
+    width: 560px;
     display: grid;
     justify-content: center;
 
@@ -47,6 +46,14 @@
         &-left{
             margin-left: 20px;
         }
+
+        &.removing{
+            opacity: 0;
+            height: 0;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
     }
 
     &-checkbox{
@@ -61,6 +68,11 @@
         max-width: 200px;
         word-break: break-all;
         transition: color 0.4s, text-decoration 0.4s;
+
+        &.completed{
+            color: $color-green;
+            text-decoration: line-through;
+        }
     }
     
 }

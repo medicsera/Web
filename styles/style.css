@@ -1,16 +1,3 @@
-.task-text.completed {
-  color: #57C76F;
-  text-decoration: line-through;
-}
-
-.task-item.removing {
-  opacity: 0;
-  height: 0;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-}
-
 :root {
   --bg-color: linear-gradient(to bottom, #DFC7FF, #9E78CF);
   --color-item: #F8F8F8;
@@ -36,7 +23,6 @@
   height: 100vh;
 }
 .page__container {
-  max-width: 580px;
   height: 75%;
   margin: 5%;
   padding: 32px 24px;
@@ -121,8 +107,7 @@ body {
 .task {
   padding: 60px 20px;
   font-size: 1.3em;
-  display: inline-block;
-  max-width: 560px;
+  width: 560px;
   display: grid;
   justify-content: center;
 }
@@ -166,6 +151,13 @@ body {
 .task-item-left {
   margin-left: 20px;
 }
+.task-item.removing {
+  opacity: 0;
+  height: 0;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
 .task-checkbox {
   width: 28px;
   height: 28px;
@@ -176,6 +168,10 @@ body {
   max-width: 200px;
   word-break: break-all;
   transition: color 0.4s, text-decoration 0.4s;
+}
+.task-text.completed {
+  color: #57C76F;
+  text-decoration: line-through;
 }
 
 @media screen and (max-width: 767px) {
