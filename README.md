@@ -56,7 +56,7 @@ project/
    ```
 2. Скомпилируйте SCSS-файлы в CSS:
    ```bash
-   sass:dev
+   npm run sass:dev
    ```
 3. Запустите проект локально:
    Используйте расширение **Live Server** для VS Code
